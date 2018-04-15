@@ -7,10 +7,6 @@ import 'res/TEST.dart' as POW; // my dart file
 
 void main() {
 
-// Define Class
-Car mcar = new Car();
-mcar.sayHello("zakaria");
-
 // List
 var list = new List(); // var list = [1,2]
 list.add(1);
@@ -77,12 +73,8 @@ void fruit({apple = 0, orange = 0, banana = 0}){
 	print("apple: $apple, orange:$orange, banana:$banana");
 }
 
-void student(int id, String name, [String uinvers = "ZAKI UNIVERS"]){// default variabels must be in [...]
+void student(int id, String name, [String uinvers = "ZAKI UNIVERS"]){// default variables must be in [...]
 	print("id:$id, name:$name, uinvers:$uinvers");
 }
 // Enumurations
 enum Status {none,solid,liquid,gaz}
-// Classes
-class Car {
-	sayHello(String name)=> print("Hello "+name);
-}
