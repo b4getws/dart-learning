@@ -34,7 +34,7 @@ print(x);
 
 // Hash Code 'len of hash = 9 :)'
 var hash = "zakaria 1996";
-print(hash.hashCode);
+print(hash.hashCode); // 18135797
 
 // Number Methods
 var a = 195.9;
@@ -45,10 +45,10 @@ print(a.compareTo(14785)); // -1 'if less', 1 'if great', 0 'if eaqual'
 
 // String Methods
 var b = "zakaria,chahboun,ali,balawi";
-print(b.split(','));
+print(b.split(',')); // [zakaria, chahboun, ali, balawi]
  
 // Enumurations (show end of main())
-print(Status.values);
+print(Status.values); // [Status.none, Status.solid, Status.liquid, Status.gaz]
 
 // Anonymous Function
 List<int> tlist = new List<int>();
@@ -77,7 +77,7 @@ void fruit({apple = 0, orange = 0, banana = 0}){
 	print("apple: $apple, orange:$orange, banana:$banana");
 }
 
-void student(int id, String name, [String uinvers = "ZAKI UNIVERS"]){// default variabls mus be in [...]
+void student(int id, String name, [String uinvers = "ZAKI UNIVERS"]){// default variabels must be in [...]
 	print("id:$id, name:$name, uinvers:$uinvers");
 }
 // Enumurations
