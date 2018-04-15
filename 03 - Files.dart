@@ -14,7 +14,7 @@ void main() {
 Future foo() async{
 	try {
 
-			var des = await new File('text.txt').readAsString();
+			var des = await new File('res/text.txt').readAsString();
 			// to do not use (async/await) : use promise ".then(val){...}"
 			print(des);
 

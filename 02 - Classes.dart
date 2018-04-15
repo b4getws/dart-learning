@@ -9,20 +9,6 @@ void main(List<String> args) {
   print(dis);
   calc.printKilo();
 
-  // Functions
-  print(decorateName("zakaria"));
-  printMyInfo(10); // 10 : zaki
-  printMyInfo(10,"chahboun"); // 10 : chahboun
-
-}
-
-// functions
-String decorateName(String name){
-  return "*** "+name+" ***";
-}
-
-void printMyInfo(int id, [String name = "zaki"]){ // default variabls mus be in [...]
-    print("ID: $id, Name: $name");
 }
 
 // interfaces ( = simple class)

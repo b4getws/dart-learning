@@ -3,6 +3,7 @@
 12/04/2018
 13/04/2018
 */
+import 'res/TEST.dart' as POW; // my dart file
 
 void main() {
 
@@ -48,11 +49,40 @@ print(b.split(','));
  
 // Enumurations (show end of main())
 print(Status.values);
+
+// Anonymous Function
+List<int> tlist = new List<int>();
+tlist.add(10); tlist.add(20); tlist.add(30);
+
+tlist.forEach((i){ // Method 1
+	print(i);
+});
+
+tlist.forEach((i) =>	print(i));  // Method 2
+
+// Import External dart file
+print(POW.myPow(2, 10)); // 2^10 = 1024
+
+// Functions
+fruit(apple: 15,banana: 25);
+student(125, "zakaria");
+student(126, "karam", "GHAZA UNIVERS");
+
 }
 
+/* **************** OTHERS ****************** */
+
+// Functions
+void fruit({apple = 0, orange = 0, banana = 0}){
+	print("apple: $apple, orange:$orange, banana:$banana");
+}
+
+void student(int id, String name, [String uinvers = "ZAKI UNIVERS"]){// default variabls mus be in [...]
+	print("id:$id, name:$name, uinvers:$uinvers");
+}
 // Enumurations
 enum Status {none,solid,liquid,gaz}
-
+// Classes
 class Car {
 	sayHello(String name)=> print("Hello "+name);
 }
