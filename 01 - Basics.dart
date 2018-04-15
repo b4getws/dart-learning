@@ -4,32 +4,7 @@
 13/04/2018
 */
 
-import 'dart:async';
-import 'dart:io';
-
-class Car {
-	sayHello(String name)=> print("Hello "+name);
-}
-
 void main() {
-
-// Read File
-/*
-// to use (async/await) you must return a 'Future' type function body
-Future foo() async{
-	try {
-
-			var des = await new File('C:/Users/hp/Desktop/text.txt').readAsString();
-			// to do not use (async/await) : use promise ".then(val){...}"
-			print(des);
-
-	} on IOException catch (e) {
-	print('Could not describe object: $e');
-	}
-}
-
-foo();
-*/
 
 // Define Class
 Car mcar = new Car();
@@ -77,3 +52,7 @@ print(Status.values);
 
 // Enumurations
 enum Status {none,solid,liquid,gaz}
+
+class Car {
+	sayHello(String name)=> print("Hello "+name);
+}
