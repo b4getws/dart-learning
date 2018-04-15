@@ -5,7 +5,7 @@ void main(List<String> args) {
 
   // Classe / Interface
   Calculator calc = new Calculator();
-  var dis = calc.getDistance(10.25,15);
+  var dis = calc.getDistance(10.25,15.0);
   print(dis);
   calc.printKilo();
 
@@ -27,7 +27,7 @@ void printMyInfo(int id, [String name = "zaki"]){ // default variabls mus be in 
 
 // interfaces ( = simple class)
 abstract class Distance {
-  int getDistance(double x, double y);
+  double getDistance(double x, double y);
 }
 
 abstract class Kilo {
@@ -35,12 +35,10 @@ abstract class Kilo {
 }
 
 class Calculator implements Distance,Kilo{
-    int getDistance(double x, double y){
+    double getDistance(double x, double y){
       return (y-x).abs();
     }
     printKilo(){
         //print("Kilo!");
     }
 }
-
-//
