@@ -64,17 +64,33 @@ fruit(apple: 15,banana: 25);
 student(125, "zakaria");
 student(126, "karam", "GHAZA UNIVERS");
 
+// The const keyword
+/*
+	a const variable is a compile-time constant. (Const variables are implicitly final.)
+	Note: Instance variables can be final but not const.
+	set the value to a compile-time constant such as a number or string literal.
+
+	You can't change the value of a final or const variable.
+ */
+const ab = 10;
+const int abc = 15;
+var abcd = const [1,3,4];
+final abcde = const {"salim":1, "kamal":2, "zaki":3};
+print("$ab, $abc, $abcd, $abcde");
+
 }
 
 /* **************** OTHERS ****************** */
 
 // Functions
+/* Optional Parames */
 void fruit({apple = 0, orange = 0, banana = 0}){
 	print("apple: $apple, orange:$orange, banana:$banana");
 }
-
+/* Optional Parames : Last Parameter */
 void student(int id, String name, [String uinvers = "ZAKI UNIVERS"]){// default variables must be in [...]
 	print("id:$id, name:$name, uinvers:$uinvers");
 }
+
 // Enumurations
 enum Status {none,solid,liquid,gaz}
