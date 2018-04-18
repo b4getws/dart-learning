@@ -7,6 +7,27 @@ import 'res/TEST.dart' as POW; // my dart file
 
 void main() {
 
+// Differents types
+int hex = 0xA; // (A)hex = (10)int
+print(hex);
+
+// Runes
+/*
+	In Dart, runes are the UTF-32 code points of a string.
+	The usual way to express a Unicode code point is \uXXXX, where XXXX is a 4-digit hexidecimal value.
+	** For example, the heart character (♥) is \u2665.
+	
+	To specify more or less than 4 hex digits, place the value in curly brackets.
+	** For example, the laughing emoji (😆) is \u{1f600}.
+*/
+String ru = '\u2665'; // ♥
+
+Runes input = new Runes(
+		'\u2665  \u{1f605}  \u{1f60e}  \u{1f47b}  \u{1f596}  \u{1f44d}');
+
+print(ru);
+print(new String.fromCharCodes(input));
+
 // List
 var list = new List(); // var list = [1,2]
 list.add(1);
@@ -46,6 +67,12 @@ print(b.split(',')); // [zakaria, chahboun, ali, balawi]
 var s1 = 'TEST1';
 var s2 = '''TEST2''';
 print(s1); print(s2);
+
+var s3 = 'String '
+    'concatenation'
+    " works even over line breaks.";
+
+print(s3);
 
 
 // Enumurations (show end of main())
