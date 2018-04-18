@@ -21,7 +21,6 @@ print(hex);
 	** For example, the laughing emoji (😆) is \u{1f600}.
 */
 String ru = '\u2665'; // ♥
-
 Runes input = new Runes(
 		'\u2665  \u{1f605}  \u{1f60e}  \u{1f47b}  \u{1f596}  \u{1f44d}');
 
@@ -110,6 +109,30 @@ var abcd = const [1,3,4];
 final abcde = const {"salim":1, "kamal":2, "zaki":3};
 print("$ab, $abc, $abcd, $abcde");
 
+// Closures
+Function makeAdder(int addBy){
+	return (int i) => addBy+i;
+}
+
+var add = makeAdder(15); // addBy = 15; add = (int i)=> 15 + i;
+print(add(2)); // add = (2)=> 15 + 2; return 17;
+
+// Test Operatiors
+/*
+	The result of *obj is T* is true if obj *implements* the interface specified by T.
+	For example, obj is Object is always true.
+*/
+String test;
+print(test is Object); // true
+
+// Cascade notation (..)
+Person p = new Person(1, "zakaria");
+p
+	..name = "chahboun".toUpperCase()
+	..id = 2;
+
+print("Name : ${p.name}, ID : ${p.id}"); // Name : CHAHBOUN, ID : 2
+
 }
 
 /* **************** OTHERS ****************** */
@@ -126,3 +149,16 @@ void student(int id, String name, [String uinvers = "ZAKI UNIVERS"]){// default 
 
 // Enumurations
 enum Status {none,solid,liquid,gaz}
+
+// TESTs
+class Person {
+	int _id;
+	String _name;
+
+	Person(this._id,this._name);
+	set id(id) => _id = id;
+	get id => _id;
+
+	set name(name) => _name = name;
+	get name => _name;
+}
