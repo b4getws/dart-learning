@@ -42,7 +42,12 @@ print(a.compareTo(14785)); // -1 'if less', 1 'if great', 0 'if eaqual'
 // String Methods
 var b = "zakaria,chahboun,ali,balawi";
 print(b.split(',')); // [zakaria, chahboun, ali, balawi]
- 
+
+var s1 = 'TEST1';
+var s2 = '''TEST2''';
+print(s1); print(s2);
+
+
 // Enumurations (show end of main())
 print(Status.values); // [Status.none, Status.solid, Status.liquid, Status.gaz]
 

@@ -20,7 +20,7 @@ void main(List<String> args) {
   ford.printInfo();
   mercides.printInfo();
 
-  // Car2 Extends Car (inheritance)
+  // Car2 Extends Car (Inheritance)
   Car2 fiat = new Car2(1,"fiat","model 4");
   fiat.printInfo();
   print(fiat.countCars()); // 4 cars! :)
@@ -29,10 +29,12 @@ void main(List<String> args) {
   fiat.number = 10; // set number : 10
   print(fiat.number); // get number :)
 
-  // Classe / Interface
-  Calculator2 calc = new Calculator2();
-  var dis = calc.getDistance(10.25,15.0);
-  print(dis);
+  // Class / Interface
+  Calculator calc = new Calculator();
+  print(calc.getDistance(10.25,15.0));
+  
+  Calculator2 calc2 = new Calculator2();
+  print(calc2.minToSec(12));
 
 }
 
@@ -64,6 +66,7 @@ class Car {
   int countCars() => _count;
 }
 
+// Classes Inheritance
 class Car2 extends Car{
   int _number;
 
@@ -77,29 +80,33 @@ class Car2 extends Car{
   set number(int val) => _number = val;
 }
 
+//---------------------------------------------------//
+
 // Interfaces (simple abstract class)
 abstract class Distance {
   double getDistance(double x, double y);
 }
-abstract class Kilo {
-  printKilo();
-}
-
-// Implement Interfaces
-class Calculator implements Distance,Kilo{
-    double getDistance(double x, double y){
-      return (y-x).abs();
-    }
-    printKilo(){
-        //print("Kilo!");
-    }
+abstract class Time {
+  int minToSec(int min);
 }
 
 // Implement Interfaces (Dart Style) !
-class Calculator2 extends Distance{
+class Calculator extends Distance{
 
     // if you dont have "getDistance" in here == Error! :)
     double getDistance(double x, double y){
       return (y-x).abs();
+    }
+}
+
+// Implement Interfaces (Normal Style)
+class Calculator2 implements Distance, Time{
+
+    // You must implement all funtions of (Distance &Time) Interfaces
+    double getDistance(double x, double y){
+      return (y-x).abs();
+    }
+    int minToSec(int min){
+      return min*60;
     }
 }
