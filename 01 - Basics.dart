@@ -8,6 +8,7 @@
 import 'res/TEST.dart' as POW; // Import all contents of this library
 import 'res/TEST2.dart' as NAME show niceName; // Import Only (niceName)!
 //import 'res/TEST2.dart' hide niceName; // Import All Except (niceName)!
+//import 'SOME_THING!' deferred as hello; // allows an application to load a library on demand!
 
 void main() {
 
