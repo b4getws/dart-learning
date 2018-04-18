@@ -128,11 +128,16 @@ print(test is Object); // true
 // Cascade notation (..)
 Person p = new Person(1, "zakaria");
 p
-	..name = "chahboun".toUpperCase()
-	..id = 2;
+	..name = "chahboun".toUpperCase() // == p.name = 'text ..' 
+	..id = 2  // == id.name = 123..
+	..univer = new Uinver("IBNO ZOHR");
 
-print("Name : ${p.name}, ID : ${p.id}"); // Name : CHAHBOUN, ID : 2
+print("Name : ${p.name}, ID : ${p.id}, UIN: ${p.univer.name}"); // Name : CHAHBOUN, ID : 2
 
+p.univer
+	..name = "HARVARD UINVERSITY";
+
+print("Name : ${p.name}, ID : ${p.id}, UIN: ${p.univer.name}");
 }
 
 /* **************** OTHERS ****************** */
@@ -154,11 +159,23 @@ enum Status {none,solid,liquid,gaz}
 class Person {
 	int _id;
 	String _name;
+	Uinver _uiv = new Uinver("NO UINVERSITY");
 
 	Person(this._id,this._name);
 	set id(id) => _id = id;
 	get id => _id;
 
 	set name(name) => _name = name;
+	get name => _name;
+
+	set univer(ui) => _uiv = ui;
+	get univer => _uiv;
+}
+
+class Uinver {
+	String _name;
+
+	Uinver(this._name);
+	set name(n) => _name = n;
 	get name => _name;
 }
