@@ -37,10 +37,27 @@ void main(List<String> args) {
   print(calc2.minToSec(12));
 
   // Class (Constant constructors)
-  ImmutablePoint po = ImmutablePoint(1, 2);
+  //ImmutablePoint po = ImmutablePoint(1, 2);
   //po.x = 6; // Wrong!
 
-}
+  // Factory constructors
+  Logger l = new Logger("AB");
+  Logger v = new Logger("AB");
+  Logger c = new Logger("AP");
+
+  print(identical(l, v)); // true : because it's the same object!
+  print(identical(l, c)); // false : because is not the same object!
+
+  // Overridable operators
+  Point p1 = new Point(5,6);
+  Point p2 = new Point(8,0);
+
+  Point p3 = p1 + p2;
+  Point p4 = p1 - p2;
+  p3.printInfos(); // (X: 13, Y: 6)
+  p4.printInfos(); // (X: -3, Y: 6)
+
+}// END OF MAIN
 
 /****************** OTHERS ********************** */
 // Classes
@@ -85,8 +102,15 @@ class Car2 extends Car{
 }
 
 //---------------------------------------------------//
+/*
+If you want to create a class A that supports class B’s API without inheriting B’s implementation,
+class A should implement the B interface.
+:)
 
-// Interfaces (simple abstract class)
+A & B == Normal Classes
+*/
+
+// Interfaces (Abstract class)
 abstract class Distance {
   double getDistance(double x, double y);
 }
@@ -163,4 +187,25 @@ class Logger {
   void log(String msg) {
     if (!mute) print(msg);
   }
+}
+
+//-----------------------------------------------//
+//Overridable operators
+
+class Point {
+  int _x;
+  int _y;
+
+  Point([this._x = 0,this._y = 0]);
+
+  // override + operation
+  Point operator+(Point p){
+    return new Point(this._x+p._x, this._y+p._y);
+  }
+  // override - operation
+  Point operator-(Point p){
+    return new Point(this._x-p._x, this._y-p._y);
+  }
+
+  printInfos()=> print("(X: $_x, Y: $_y)"); 
 }
