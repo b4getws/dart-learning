@@ -94,7 +94,7 @@ tlist.forEach((i) =>	print(i));  // Method 2
 
 // Import External dart file (Every Dart app is a library!)
 print(POW.myPow(2, 10)); // 2^10 = 1024
-print(NAME.niceName("AL KHAWARIZMI")); // *** ZAKI vs ALI ***
+print(NAME.niceName("AL KHAWARIZMI")); // *** Al KHAWARIZMI ***
 
 // Functions
 fruit(apple: 15,banana: 25);
