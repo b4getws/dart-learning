@@ -132,12 +132,13 @@ p
 	..id = 2  // == id.name = 123..
 	..univer = new Uinver("IBNO ZOHR");
 
-print("Name : ${p.name}, ID : ${p.id}, UIN: ${p.univer.name}"); // Name : CHAHBOUN, ID : 2
+print("Name : ${p.name}, ID : ${p.id}, UIN: ${p.univer.name}");// Name : CHAHBOUN, ID : 2, UIN: IBNO ZOHR
+
 
 p.univer
 	..name = "HARVARD UINVERSITY";
 
-print("Name : ${p.name}, ID : ${p.id}, UIN: ${p.univer.name}");
+print("Name : ${p.name}, ID : ${p.id}, UIN: ${p.univer.name}");// Name : CHAHBOUN, ID : 2, UIN: HARVARD UINVERSITY
 }
 
 /* **************** OTHERS ****************** */

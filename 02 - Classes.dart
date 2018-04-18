@@ -36,6 +36,10 @@ void main(List<String> args) {
   Calculator2 calc2 = new Calculator2();
   print(calc2.minToSec(12));
 
+  // Class (Constant constructors)
+  ImmutablePoint po = ImmutablePoint(1, 2);
+  //po.x = 6; // Wrong!
+
 }
 
 /****************** OTHERS ********************** */
@@ -50,7 +54,7 @@ class Car {
     _count ++;
   }
 
-  // Multiple Constructors
+  // Multiple Constructors (Named constructors)
   Car.FromList(List<String> L): _model = L[1]{
     _name = L[0];
     _count ++;
@@ -109,4 +113,54 @@ class Calculator2 implements Distance, Time{
     int minToSec(int min){
       return min*60;
     }
+}
+
+//---------------------------------------------------//
+/*
+Constant constructors
+
+If your class produces objects that never change,
+you can make these objects compile-time constants.
+
+To do this, define a const constructor and make sure that all instance variables are final.
+*/
+class ImmutablePoint {
+  static final ImmutablePoint origin =
+      const ImmutablePoint(0, 0);
+
+  final num x, y;
+
+  const ImmutablePoint(this.x, this.y);
+}
+
+/*
+Factory constructors
+
+Use the factory keyword when implementing a constructor that **doesn’t always create a new instance of its class**.
+For example, a factory constructor might return an instance from a cache, or it might return an instance of a subtype.
+*/
+
+class Logger {
+  final String name;
+  bool mute = false;
+
+  // _cache is library-private, thanks to
+  // the _ in front of its name.
+  static final Map<String, Logger> _cache = <String, Logger>{}; // Init!
+
+  factory Logger(String name) {
+    if (_cache.containsKey(name)) {
+      return _cache[name];
+    } else {
+      final logger = new Logger._internal(name);
+      _cache[name] = logger;
+      return logger;
+    }
+  }
+
+  Logger._internal(this.name);
+
+  void log(String msg) {
+    if (!mute) print(msg);
+  }
 }
