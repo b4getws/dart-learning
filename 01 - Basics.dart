@@ -3,7 +3,11 @@
 12/04/2018
 13/04/2018
 */
-import 'res/TEST.dart' as POW; // my dart file
+
+// Library (Simple Dart File) : Every Dart app is a library!
+import 'res/TEST.dart' as POW; // Import all contents of this library
+import 'res/TEST2.dart' as NAME show niceName; // Import Only (niceName)!
+//import 'res/TEST2.dart' hide niceName; // Import All Except (niceName)!
 
 void main() {
 
@@ -87,8 +91,9 @@ tlist.forEach((i){ // Method 1
 
 tlist.forEach((i) =>	print(i));  // Method 2
 
-// Import External dart file
+// Import External dart file (Every Dart app is a library!)
 print(POW.myPow(2, 10)); // 2^10 = 1024
+print(NAME.niceName("AL KHAWARIZMI")); // *** ZAKI vs ALI ***
 
 // Functions
 fruit(apple: 15,banana: 25);
