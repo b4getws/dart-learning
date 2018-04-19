@@ -57,6 +57,15 @@ void main(List<String> args) {
   p3.printInfos(); // (X: 13, Y: 6)
   p4.printInfos(); // (X: -3, Y: 6)
 
+  // Comparing objects
+  Phone nokia = new Phone("Nokia", 90);
+  Phone nokia1 = new Phone("Nokia", 90);
+  Phone nokia2 = new Phone("Nokia", 81);
+
+  print(nokia.compareTo(nokia1)); // 0
+  print(nokia.compareTo(nokia2)); // 1
+  print(nokia2.compareTo(nokia1)); // -1
+
 }// END OF MAIN
 
 /****************** OTHERS ********************** */
@@ -190,8 +199,29 @@ class Logger {
 }
 
 //-----------------------------------------------//
-//Overridable operators
+// Comparing objects
+/*
+  Implement the Comparable interface to indicate that an object can be compared to another object,
+  usually for sorting.
+  
+  The compareTo() method returns < 0 for smaller, 0 for the same, and > 0 for bigger.
+*/
+class Phone implements Comparable<Phone> {
+  String _name;
+  int _version;
 
+  Phone(this._name,this._version);
+
+  @override
+  int compareTo(Phone other){
+    if(_version == other._version) return 0;
+    if(_version > other._version) return 1;
+    if(_version < other._version) return -1;
+  }
+}
+
+//-----------------------------------------------//
+//Overridable operators
 class Point {
   int _x;
   int _y;

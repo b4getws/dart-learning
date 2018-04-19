@@ -137,14 +137,39 @@ p
 	..name = "chahboun".toUpperCase() // == p.name = 'text ..' 
 	..id = 2  // == id.name = 123..
 	..univer = new Uinver("IBNO ZOHR");
-
 print("Name : ${p.name}, ID : ${p.id}, UIN: ${p.univer.name}");// Name : CHAHBOUN, ID : 2, UIN: IBNO ZOHR
-
 
 p.univer
 	..name = "HARVARD UINVERSITY";
-
 print("Name : ${p.name}, ID : ${p.id}, UIN: ${p.univer.name}");// Name : CHAHBOUN, ID : 2, UIN: HARVARD UINVERSITY
+
+// Parsing URIs
+var uri = Uri.parse('http://example.org:8080/foo/bar#frag');
+print(uri.scheme); // http
+print(uri.host); // example.org
+print(uri.port); // 8080
+print(uri.path); // /foo/bar
+print(uri.fragment); // frag
+print(uri.origin); // http://example.org:8080
+
+// Building URIs
+var uri2 = new Uri(
+    scheme: 'http',
+    host: 'example.org',
+    path: '/foo/bar',
+    fragment: 'frag'
+	);
+	print(uri2.toString() == 'http://example.org/foo/bar#frag'); // true
+
+// Dates and times
+var now = new DateTime.now(); // now
+var now2 = new DateTime(2000, 1, 2); // January 2, 2000
+
+print('${now.day}/${now.month}/${now.year}');
+print(now2); // 2000-01-02 00:00:00.000
+
+print(DateTime.parse('2018-04-19 10:07:25')); // Year-Month-Day H:M:S
+
 }
 
 /* **************** OTHERS ****************** */
